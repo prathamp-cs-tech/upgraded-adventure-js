@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body>
+    <p>Youtube Subscribe Button</p>
+    <button onclick="subscribe()
+    "class="js-subscribe">Subscribe</button>
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40=+$10 shipping</p>
+    <p>Orders under $40=Free shipping</p>
+    <input class="js-input" onkeydown="entkey()" placeholder="Cost of order">
+    <button onclick="calculation();">Calculate</button>
+    <p class="js-fcost"></p>
+    <script>
+        function entkey(){
+            if(event.key==='Enter'){
+                calculation()
+            }
+        }
+        function subscribe(){
+            const buttonSub=document.querySelector('.js-subscribe');
+        if (buttonSub.innerHTML==='Subscribe'){
+            buttonSub.innerHTML='Subscribed'
+        }
+        else{buttonSub.innerHTML='Subscribe'}
+        }
+        function calculation(){
+            const inpt=document.querySelector(".js-input");
+            let price=Number(inpt.value);
+            if (price<40){
+                price+=10;
+            }
+            document.querySelector(".js-fcost").innerHTML=`$${price}`;
+        }
+    </script>
+</body>
+</html>
